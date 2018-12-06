@@ -1,1 +1,6 @@
-https://www.tutorialesprogramacionya.com/bootstrap4ya/index.php?inicio=0
+https://www.youtube.com/watch?v=nug1pMke-y4&list=PLgmvK1nEQUkyvriZHnFgb8_he3t1JnEoh
+
+
+pagina de boostrap4 con ejemplos:
+---------------------------------------
+https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp
