@@ -1,0 +1,5 @@
+
+angular onlne:
+---------------------------------
+docu: https://angular.io/guide/template-syntax
+build: https://stackblitz.com/angular/mnjmrkvlgbp?file=src%2Fapp%2Fapp.component.ts
