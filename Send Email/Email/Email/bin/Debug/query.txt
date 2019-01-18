@@ -1,0 +1,20 @@
+select	a.no_orden Solicitud,
+		a.numero_orden Solicitud_Madre,
+		a.fecha_recibida Fecha_Creacion,
+		a.service_type Descripcion_Producto_Comercial,
+		a.proceso_cofee Descripcion_Oferta,
+		a.fac_tel_asig Telefono_Solicitud,
+		a.canal_venta Vendedor,
+		a.nombre1_cliente Cliente,
+		b.descripcion Estatus,
+		a.CCU CCU_Cliente_Dim,
+		a.cedula Documento,
+		c.descripcion2 Distrito_Tecnic,
+		ISNULL((select top 1 respuesta from saydot.tracking_rebote nolock where no_orden=a.no_orden and (ISNULL(cod_rebote,' ')<>' 'or ISNULL(respuesta,' ')<>' ') order by fecha_ini desc),'NA') Descripcion_Ult_Respuesta_Tecnica_Saydot,
+		ISNULL((select top 1 cod_rebote from saydot.tracking_rebote nolock where no_orden=a.no_orden and (ISNULL(cod_rebote,' ')<>' 'or ISNULL(respuesta,' ')<>' ') order by fecha_ini desc),'NA') Codigo_Ult_Respuesta_Tecnica_Saydot   
+from saydot.orden_trabajo a (nolock)
+	left join saydot.estatus_ot b (nolock) on a.codigo_estatus=b.codigo_estatus
+	left join saydot.distrito c (nolock) on a.codigo_distrito=c.codigo_distrito	
+where CONVERT(date, a.fecha_recibida)=CONVERT(date,getdate()-1)	
+and	a.codigo_estatus NOT in('XC','PC','CC')  --  ESTATUS DE ORDENES CERRADAS
+order by a.no_orden

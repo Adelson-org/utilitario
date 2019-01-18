@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://Claro.com.do/" xmlns:s1="http://Claro.com.do/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://Claro.com.do/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://Claro.com.do/">
+      <s:element name="SendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Aplicacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Prioridad" type="tns:ePrioridad" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaExpira" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ePrioridad">
+        <s:restriction base="s:string">
+          <s:enumeration value="Ninguna" />
+          <s:enumeration value="Baja" />
+          <s:enumeration value="Normal" />
+          <s:enumeration value="Urgente" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMSResult" type="tns:Respuestas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuestas">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Respuesta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EnviarSMSIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Aplicacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Prioridad" type="tns:ePrioridad" />
+            <s:element minOccurs="0" maxOccurs="1" name="DireccionIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaExpira" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarSMSIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnviarSMSIPResult" type="tns:Respuestas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Prioridad" type="tns:ePrioridad" />
+            <s:element minOccurs="0" maxOccurs="1" name="Asunto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Etiqueta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remitente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destinatario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Copia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Aplicacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaExpira" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendEmailResult" type="tns:Respuestas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Respuestas" nillable="true" type="tns:Respuestas" />
+    </s:schema>
+    <s:schema targetNamespace="http://Claro.com.do/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnviarSMSIPSoapIn">
+    <wsdl:part name="parameters" element="tns:EnviarSMSIP" />
+  </wsdl:message>
+  <wsdl:message name="EnviarSMSIPSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviarSMSIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSHttpGetIn">
+    <wsdl:part name="Texto" type="s:string" />
+    <wsdl:part name="Telefono" type="s:string" />
+    <wsdl:part name="Aplicacion" type="s:string" />
+    <wsdl:part name="Prioridad" type="s:string" />
+    <wsdl:part name="FechaExpira" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSHttpGetOut">
+    <wsdl:part name="Body" element="tns:Respuestas" />
+  </wsdl:message>
+  <wsdl:message name="EnviarSMSIPHttpGetIn">
+    <wsdl:part name="Texto" type="s:string" />
+    <wsdl:part name="Telefono" type="s:string" />
+    <wsdl:part name="Aplicacion" type="s:string" />
+    <wsdl:part name="Prioridad" type="s:string" />
+    <wsdl:part name="DireccionIP" type="s:string" />
+    <wsdl:part name="Usuario" type="s:string" />
+    <wsdl:part name="FechaExpira" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnviarSMSIPHttpGetOut">
+    <wsdl:part name="Body" element="tns:Respuestas" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailHttpGetIn">
+    <wsdl:part name="Prioridad" type="s:string" />
+    <wsdl:part name="Asunto" type="s:string" />
+    <wsdl:part name="Texto" type="s:string" />
+    <wsdl:part name="Etiqueta" type="s:string" />
+    <wsdl:part name="Remitente" type="s:string" />
+    <wsdl:part name="Destinatario" type="s:string" />
+    <wsdl:part name="Copia" type="s:string" />
+    <wsdl:part name="Aplicacion" type="s:string" />
+    <wsdl:part name="FechaExpira" type="s:string" />
+    <wsdl:part name="f" type="s1:StringArray" />
+    <wsdl:part name="fileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:Respuestas" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSHttpPostIn">
+    <wsdl:part name="Texto" type="s:string" />
+    <wsdl:part name="Telefono" type="s:string" />
+    <wsdl:part name="Aplicacion" type="s:string" />
+    <wsdl:part name="Prioridad" type="s:string" />
+    <wsdl:part name="FechaExpira" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSHttpPostOut">
+    <wsdl:part name="Body" element="tns:Respuestas" />
+  </wsdl:message>
+  <wsdl:message name="EnviarSMSIPHttpPostIn">
+    <wsdl:part name="Texto" type="s:string" />
+    <wsdl:part name="Telefono" type="s:string" />
+    <wsdl:part name="Aplicacion" type="s:string" />
+    <wsdl:part name="Prioridad" type="s:string" />
+    <wsdl:part name="DireccionIP" type="s:string" />
+    <wsdl:part name="Usuario" type="s:string" />
+    <wsdl:part name="FechaExpira" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnviarSMSIPHttpPostOut">
+    <wsdl:part name="Body" element="tns:Respuestas" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailHttpPostIn">
+    <wsdl:part name="Prioridad" type="s:string" />
+    <wsdl:part name="Asunto" type="s:string" />
+    <wsdl:part name="Texto" type="s:string" />
+    <wsdl:part name="Etiqueta" type="s:string" />
+    <wsdl:part name="Remitente" type="s:string" />
+    <wsdl:part name="Destinatario" type="s:string" />
+    <wsdl:part name="Copia" type="s:string" />
+    <wsdl:part name="Aplicacion" type="s:string" />
+    <wsdl:part name="FechaExpira" type="s:string" />
+    <wsdl:part name="f" type="s1:StringArray" />
+    <wsdl:part name="fileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:Respuestas" />
+  </wsdl:message>
+  <wsdl:portType name="CemaWebServiceSoap">
+    <wsdl:operation name="SendSMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CEMA - Envio de mensajes SMS</wsdl:documentation>
+      <wsdl:input message="tns:SendSMSSoapIn" />
+      <wsdl:output message="tns:SendSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarSMSIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CEMA - Envio de mensajes SMS</wsdl:documentation>
+      <wsdl:input message="tns:EnviarSMSIPSoapIn" />
+      <wsdl:output message="tns:EnviarSMSIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CEMA - Envio de Correos</wsdl:documentation>
+      <wsdl:input message="tns:SendEmailSoapIn" />
+      <wsdl:output message="tns:SendEmailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CemaWebServiceHttpGet">
+    <wsdl:operation name="SendSMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CEMA - Envio de mensajes SMS</wsdl:documentation>
+      <wsdl:input message="tns:SendSMSHttpGetIn" />
+      <wsdl:output message="tns:SendSMSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarSMSIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CEMA - Envio de mensajes SMS</wsdl:documentation>
+      <wsdl:input message="tns:EnviarSMSIPHttpGetIn" />
+      <wsdl:output message="tns:EnviarSMSIPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CEMA - Envio de Correos</wsdl:documentation>
+      <wsdl:input message="tns:SendEmailHttpGetIn" />
+      <wsdl:output message="tns:SendEmailHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CemaWebServiceHttpPost">
+    <wsdl:operation name="SendSMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CEMA - Envio de mensajes SMS</wsdl:documentation>
+      <wsdl:input message="tns:SendSMSHttpPostIn" />
+      <wsdl:output message="tns:SendSMSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarSMSIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CEMA - Envio de mensajes SMS</wsdl:documentation>
+      <wsdl:input message="tns:EnviarSMSIPHttpPostIn" />
+      <wsdl:output message="tns:EnviarSMSIPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CEMA - Envio de Correos</wsdl:documentation>
+      <wsdl:input message="tns:SendEmailHttpPostIn" />
+      <wsdl:output message="tns:SendEmailHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CemaWebServiceSoap" type="tns:CemaWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://Claro.com.do/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarSMSIP">
+      <soap:operation soapAction="http://Claro.com.do/EnviarSMSIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap:operation soapAction="http://Claro.com.do/SendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CemaWebServiceSoap12" type="tns:CemaWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSMS">
+      <soap12:operation soapAction="http://Claro.com.do/SendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarSMSIP">
+      <soap12:operation soapAction="http://Claro.com.do/EnviarSMSIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap12:operation soapAction="http://Claro.com.do/SendEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CemaWebServiceHttpGet" type="tns:CemaWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SendSMS">
+      <http:operation location="/SendSMS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarSMSIP">
+      <http:operation location="/EnviarSMSIP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <http:operation location="/SendEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CemaWebServiceHttpPost" type="tns:CemaWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SendSMS">
+      <http:operation location="/SendSMS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarSMSIP">
+      <http:operation location="/EnviarSMSIP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <http:operation location="/SendEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CemaWebService">
+    <wsdl:port name="CemaWebServiceSoap" binding="tns:CemaWebServiceSoap">
+      <soap:address location="http://nttappsweb0006/wscema/cema.webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CemaWebServiceSoap12" binding="tns:CemaWebServiceSoap12">
+      <soap12:address location="http://nttappsweb0006/wscema/cema.webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CemaWebServiceHttpGet" binding="tns:CemaWebServiceHttpGet">
+      <http:address location="http://nttappsweb0006/wscema/cema.webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CemaWebServiceHttpPost" binding="tns:CemaWebServiceHttpPost">
+      <http:address location="http://nttappsweb0006/wscema/cema.webservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

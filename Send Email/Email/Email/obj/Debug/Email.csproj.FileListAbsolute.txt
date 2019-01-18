@@ -1,0 +1,7 @@
+D:\backlog\Desarrollo\Send Email\Email\Email\bin\Debug\Email.exe.config
+D:\backlog\Desarrollo\Send Email\Email\Email\bin\Debug\Email.exe
+D:\backlog\Desarrollo\Send Email\Email\Email\bin\Debug\Email.pdb
+D:\backlog\Desarrollo\Send Email\Email\Email\obj\Debug\Email.csprojAssemblyReference.cache
+D:\backlog\Desarrollo\Send Email\Email\Email\obj\Debug\Email.csproj.CoreCompileInputs.cache
+D:\backlog\Desarrollo\Send Email\Email\Email\obj\Debug\Email.exe
+D:\backlog\Desarrollo\Send Email\Email\Email\obj\Debug\Email.pdb
