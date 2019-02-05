@@ -1,0 +1,11 @@
+1- Activo (cosas que tengo y que me deben.) deudora
+
+2- Pasivo (cosas que tengo pero que debo, se saca para activo) acreedora
+
+3- Capital (activos con los que inicio la operacion, se saca actipo activo) acreedora
+
+4- Ingreso (todo lo que me ingrese incluyendo regalos, se saca para activo) acreedora
+
+5- Costo (cosas que compra para vender, se saca para activo) deudora
+
+6- Gastos (Cosas que compra o paga para consumir, se entra desde de activo) deudora
