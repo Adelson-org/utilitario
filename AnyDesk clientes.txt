@@ -1,0 +1,3 @@
+nc		:serverc-16@ad
+Francisco	:servidor-auxili-1@ad
+armando		:cliente809@ad
