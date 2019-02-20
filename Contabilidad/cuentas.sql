@@ -581,7 +581,6 @@ values
 (GETDATE(),'1.2.2','deposito al bhd adelson',0,2028.12) --caja interes recibido
 
 
-
 --cobro igualas
 insert into diario
 values
@@ -591,40 +590,104 @@ values
 (GETDATE(),'1.3.6','pago carlos y nestol',0,2500) --Cxc Negocios Diversos
 
 
-----Egresos capital invertido
---insert into diario
---values
---(GETDATE(),'1.3.1','Invertido en prestamo',26499.79,0), --cxc inversiones prestamos
-----@
---(GETDATE(),'1.2.4','Invertido en prestamo',0,26499.79) --caja para prestamo
+
+
+--intereses cobrados
+insert into diario
+values
+(GETDATE(),'1.2.2','interes cobrado',859.71,0), --Caja interes recibido por prestamo
+--@
+(GETDATE(),'4.6','interes cobrado',0,859.71) --ingresos por prestamo
+
+
+--capital cobrado
+insert into diario
+values
+(GETDATE(),'1.2.3','capital recuperado',4040.29,0), --caja capital cobrado
+--@
+(GETDATE(),'1.3.1','capital recuperado',0,4040.29) --cxc inversiones prestamos
 
 
 
-----intereses cobrados
---insert into diario
---values
---(GETDATE(),'1.2.2','interes cobrado',786.95,0), --Caja interes recibido por prestamo
-----@
---(GETDATE(),'4.6','interes cobrado',0,671.66), --ingresos por prestamo
---(GETDATE(),'4.7','interes cobrado',0,115.29) --ingresos por prestamo
 
 
-----capital cobrado
---insert into diario
---values
---(GETDATE(),'1.2.3','capital recuperado',6043.25,0), --caja capital cobrado
-----@
---(GETDATE(),'1.3.1','capital recuperado',0,6043.25) --cxc inversiones prestamos
+--transf. 1000 de capital recibido a caja persona
+insert into diario
+values
+(GETDATE(),'1.2.1','para gastos personal',1000,0), --caja personal
+--@
+(GETDATE(),'1.2.3','para gastos personal',0,1000) --caja capital cobrado
 
 
-----gastos efectivo
---insert into diario
---values
---(GETDATE(),'6.11','chucheria',75,0), --chucheria y fiesta
---(GETDATE(),'6.9','comida',140,0), --gasto compras del hogar
---(GETDATE(),'6.3','recarga',40,0), --Gasto Comunicacion
-----@
---(GETDATE(),'1.2.1','gastos',0,255) --caja gasto personal
+
+--Egresos capital invertido
+insert into diario
+values
+(GETDATE(),'1.3.1','Invertido en prestamo',6170,0), --cxc inversiones prestamos
+--@
+(GETDATE(),'1.2.3','Invertido en prestamo',0,1000), --caja para prestamo
+(GETDATE(),'1.1.4','Invertido en prestamo',0,5000), --bhd rosalis
+(GETDATE(),'4.6','ingresos por prestamo',0,170) --ingresos interes prestamo
+
+
+
+
+--gastos efectivo
+insert into diario
+values
+(GETDATE(),'6.11','chucheria',73,0), --chucheria y fiesta
+(GETDATE(),'6.9','comida',170,0), --gasto compras del hogar
+--@
+(GETDATE(),'1.2.1','gastos',0,243) --caja gasto personal
+
+
+--*******************************************************
+
+
+
+
+
+
+--------****************19/02/19***************-------
+
+--Egresos capital invertido
+insert into diario
+values
+(GETDATE(),'1.3.1','Invertido en prestamo',9500,0), --cxc inversiones prestamos
+--@
+(GETDATE(),'1.1.1','Invertido en prestamo',0,4500), --banco popular
+(GETDATE(),'1.2.3','Invertido en prestamo',0,5000) --caja capital cobrado
+
+
+
+--intereses cobrados
+insert into diario
+values
+(GETDATE(),'1.2.2','interes cobrado',615.63,0), --Caja interes recibido por prestamo
+--@
+(GETDATE(),'4.6','interes cobrado',0,615.63) --ingresos por prestamo
+
+
+--capital cobrado
+insert into diario
+values
+(GETDATE(),'1.2.3','capital recuperado',5014.37,0), --caja capital cobrado
+--@
+(GETDATE(),'1.3.1','capital recuperado',0,5014.37) --cxc inversiones prestamos
+
+
+
+
+
+
+--gastos efectivo
+insert into diario
+values
+(GETDATE(),'6.11','chucheria',60,0), --chucheria y fiesta
+(GETDATE(),'6.9','comida',112,0), --gasto compras del hogar
+(GETDATE(),'6.3','internet',1235,0), --Gasto Comunicacion
+--@
+(GETDATE(),'1.2.1','gastos',0,1407) --caja gasto personal
 
 
 --*******************************************************
