@@ -22,3 +22,7 @@ Mandamiento 6:
 --------------
 Presta de apoco hasta conocer bien al cliente y recuerda el mandamiento 1.
 
+Mandamiento 7:
+--------------
+Si un cliente decide dejar de pagar, intenta negociar con el si te debe 1000 pesos, dile que pague
+nadamas 500 y que tu le descontara los otros 500 para ayudarlo, con esto recupera la mitad de la deuda.
