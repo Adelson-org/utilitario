@@ -1,0 +1,5 @@
+1) sumar el capital y el interes por separados, de cada domingo.
+2) saldar y poner en zero las cuotas de los domingos.
+3) dividir los montos/los dias-los domingos.
+4) sumarle el capital y el interes a cada cuota, que no este saldada.
+
