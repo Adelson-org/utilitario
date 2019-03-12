@@ -1,4 +1,4 @@
-SET @fecha=DATE_SUB(NOW(), INTERVAL 10 DAY);
+SET @fecha=DATE_SUB(NOW(), INTERVAL 2 DAY);
 
 SELECT v.`Nombre`,  SUM(d.interes) Interes, SUM(d.interes)* v.comision/100 Comision
 FROM detalledepago d, maestrodepago m , prestamo p, vendedor v
