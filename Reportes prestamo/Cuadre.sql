@@ -3,7 +3,7 @@ SET @fecha=DATE(NOW());
 
 DROP TABLE IF EXISTS cuadre_; 
 CREATE TABLE cuadre_
-SELECT 'Inicio' Tipo, 0 Capital, 0 Interes, 0 GastoL, CAST(AVG(  37872 ) AS DECIMAL(12,2)) Total 
+SELECT 'Inicio' Tipo, 0 Capital, 0 Interes, 0 GastoL, CAST(AVG(  26402+19000 ) AS DECIMAL(12,2)) Total 
 UNION ALL
 SELECT 'Invertido' Tipo, CAST( IFNULL( SUM(c.capital -((p.gastolegales/p.montototal)*c.capital))*-1,0)  AS DECIMAL(12,2))   Capital, 
 	CAST( IFNULL( SUM(c.interes),0)  AS DECIMAL(12,2))  Interes , 
@@ -12,9 +12,9 @@ SELECT 'Invertido' Tipo, CAST( IFNULL( SUM(c.capital -((p.gastolegales/p.montoto
 FROM cuota c, prestamo p WHERE p.`Numero`=c.`Prestamo` AND p.`Estatus`<>'Cancelado'  AND DATE(p.`Fecha`) =@fecha
 UNION ALL
 SELECT 'Cobrado' Tipo,  CAST(IFNULL( SUM(d.capital -((p.gastolegales/p.montototal)*d.capital)),0)  AS DECIMAL(12,2)) Capital,
-	 CAST( IFNULL(SUM(d.interes),0)+IFNULL(AVG((SELECT SUM(mora+comision) FROM maestrodepago WHERE fechahoy=@fecha  )),0)  AS DECIMAL(12,2)) Interes ,
+	 CAST( IFNULL(SUM(d.interes),0)+IFNULL(AVG((SELECT SUM((mora+comision)-DescuentoInteres) FROM maestrodepago WHERE fechahoy=@fecha  )),0)  AS DECIMAL(12,2)) Interes ,
 	 CAST( IFNULL( SUM(((p.gastolegales/p.montototal)*d.capital)),0)  AS DECIMAL(12,2)) GastoL,
-	 CAST( IFNULL( SUM(d.capital+d.interes),0)  +IFNULL(AVG((SELECT SUM(mora+comision) FROM maestrodepago WHERE fechahoy=@fecha  )),0)  AS DECIMAL(12,2)) Total
+	 CAST( IFNULL( SUM(d.capital+d.interes),0)  + IFNULL(AVG((SELECT SUM((mora+comision)-DescuentoInteres) FROM maestrodepago WHERE fechahoy=@fecha  )),0)  AS DECIMAL(12,2)) Total
 FROM detalledepago d, maestrodepago m, prestamo p WHERE m.prestamo=p.numero AND d.maestrodepago=m.numero AND d.nota<>'Nota de credito'
 AND m.`Estatus`<>'Cancelado' AND DATE(m.fechahoy) =@fecha  ;            
 

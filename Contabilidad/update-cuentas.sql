@@ -1,4 +1,4 @@
-
+use ContabilidadDB
 
 --reiniciando saldos
 update cuentas set Saldo=0;
