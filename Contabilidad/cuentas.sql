@@ -1,18 +1,19 @@
 
-drop table cuentas
-create table cuentas
+DROP TABLE IF EXISTS cuentas;
+
+CREATE TABLE cuentas
 ( 
-Cuenta varchar(20) not null,
-Nombre varchar(100) not null,
-Saldo float default 0, 
-Naturaleza varchar(15) not null,
-BC varchar(2) not null, --balanza comprobacion='si' o 'no'
-Madre varchar(20) not null
-)
+Cuenta VARCHAR(20) NOT NULL,
+Nombre VARCHAR(100) NOT NULL,
+Saldo FLOAT DEFAULT 0, 
+Naturaleza VARCHAR(15) NOT NULL,
+BC VARCHAR(2) NOT NULL, -- balanza comprobacion='si' o 'no'
+Madre VARCHAR(20) NOT NULL
+);
 
 
-insert into cuentas
-values
+INSERT INTO cuentas
+VALUES
 ('1','ACTIVO',0,'Deudora','no','0'),
 ('1.1','BANCOS',0,'Deudora','si','1'),
 ('1.1.1','Banco Popular',0,'Deudora','no','1.1'),
@@ -29,7 +30,7 @@ values
 ('1.3.4','Cxc Credifassil (30)',0,'Deudora','no','1.3'),
 ('1.3.5','Cxc Negocios Diversos (15)',0,'Deudora','no','1.3'),
 ('1.3.6','Cxc Concentra Cid (30)',0,'Deudora','no','1.3'),
-('1.3.7','Cxc Los peña (15 y 30)',0,'Deudora','no','1.3'),
+('1.3.7','Cxc Los pena (15 y 30)',0,'Deudora','no','1.3'),
 ('2','PASIVO',0,'Acreedora','no','0'),
 ('2.1','CXP',0,'Acreedora','si','2'),
 ('2.1.1','Cxp Altice Internet (15)',0,'Acreedora','no','2.1'),
@@ -42,7 +43,6 @@ values
 ('2.1.8','Cxp prestamo bhd leon adelson (03)',0,'Acreedora','no','2.1'),
 ('2.1.9','Cxp prestamo bhd leon rosalis (15)',0,'Acreedora','no','2.1'),
 ('2.1.10','Cxp prestamo Mecho (25/05)',0,'Acreedora','no','2.1'),
-('2.1.11','Cxp prestamo jeuris (25/04)',0,'Acreedora','no','2.1'),
 ('2.1.12','Cxp gastos legales (15 y 30)',0,'Acreedora','no','2.1'),
 ('2.1.13','Cxp Altice 200 min (los 30)',0,'Acreedora','no','2.1'),
 ('3','CAPITAL',0,'Acreedora','si','0'),
@@ -68,7 +68,7 @@ values
 ('6.8','Gasto Medicina y consulta',0,'Deudora','no','6'),
 ('6.9','Gasto compras del hogar',0,'Deudora','no','6'),
 ('6.11','Gasto fiestas y chucherias',0,'Deudora','no','6'),
-('6.21','Gasto Otros',0,'Deudora','no','6')
+('6.21','Gasto Otros',0,'Deudora','no','6');
 	
 
 
