@@ -137,7 +137,7 @@ end;
 procedure TForm1.Timer1Timer(Sender: TObject);
 begin
 
-    SENTENCIA(adoquery1,'select numero,nota from maestrodepago order by numero desc limit 1'
+    SENTENCIA(adoquery1,'select numero,efectivo,capital from maestrodepago order by numero desc limit 1'
     ,'abrir');
 
     if adoquery1.RecordCount>0 then
@@ -148,11 +148,12 @@ begin
                   abort;
            end;
 
+           //imprime, si el recibo que se grabó, no se ha impreso
            if (recibo<> adoquery1.FieldByName('numero').AsString) then
            begin
-                  if trim( adoquery1.FieldByName('nota').AsString ) ='0' then
-                    abort
-                  else
+                  //imprime, sino es un descuento con nota de credito
+                  if (adoquery1.FieldByName('efectivo').AsFloat > 0 )or
+                     (adoquery1.FieldByName('capital').AsFloat > 0) then
                   begin
                       recibo:= adoquery1.FieldByName('numero').AsString;
                       Button1.Click;
