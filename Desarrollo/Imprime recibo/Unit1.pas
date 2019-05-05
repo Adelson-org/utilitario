@@ -47,6 +47,8 @@ type
     Timer1: TTimer;
     procedure Button1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure QuickRep1BeforePrint(Sender: TCustomQuickRep;
+      var PrintReport: Boolean);
   private
     { Private declarations }
   public
@@ -55,7 +57,7 @@ type
 
 var
   Form1: TForm1;
-  recibo:string;
+  recibo,metodo:string;
 
 implementation
 
@@ -83,20 +85,21 @@ end;
 
 
 procedure TForm1.Button1Click(Sender: TObject);
-var tipopago,estatusprestamo,fechaprestamo,CONCEPTO,metodo,fechapago:string;
+var tipopago,estatusprestamo,fechaprestamo,CONCEPTO,fechapago:string;
 r:double;
 begin
-     
+
 
      //esto es para la sumatoria de abajo del recibo
      //y el pendiente para el recibo
     SENTENCIA(adoquery1,
-    'select mp.numero mpnume, mp.totalpagado-mp.notadecredito mptota, mp.fecha mpfech, '+
+    'select mp.numero mpnume, mp.efectivo, mp.capital,  mp.totalpagado-mp.notadecredito-mp.descuentointeres totalpagado, mp.fecha fecha, '+
     'mp.notadecredito+mp.descuentointeres mpncre, '+
-    'case p.metodo when ''americano'' then mp.capitalpendiente else mp.interespendiente + mp.capitalpendiente end ptota, '+
+    'case p.metodo when ''americano'' then mp.capitalpendiente else mp.interespendiente + mp.capitalpendiente end totalpendiente, '+
 
-    'cl.nombre clnomb, cl.sector clsector,cl.direccion cldireccion '+
-    ''+
+    'cl.nombre clnomb, cl.sector clsector,cl.direccion cldireccion, '+
+
+    ' p.metodo '+
     ''+
     'from maestrodepago mp, prestamo p, cliente cl '+
     'where mp.prestamo=p.numero and cl.numero=p.cliente '+
@@ -104,7 +107,7 @@ begin
     ,'abrir');
 
 
-
+    metodo:=ADOQuery1.fieldbyname('metodo').AsString;
 
 
 
@@ -137,7 +140,7 @@ end;
 procedure TForm1.Timer1Timer(Sender: TObject);
 begin
 
-    SENTENCIA(adoquery1,'select numero,efectivo,capital from maestrodepago order by numero desc limit 1'
+    SENTENCIA(adoquery1,'select numero,efectivo,capital,comision from maestrodepago order by numero desc limit 1'
     ,'abrir');
 
     if adoquery1.RecordCount>0 then
@@ -153,15 +156,47 @@ begin
            begin
                   //imprime, sino es un descuento con nota de credito
                   if (adoquery1.FieldByName('efectivo').AsFloat > 0 )or
-                     (adoquery1.FieldByName('capital').AsFloat > 0) then
+                     (adoquery1.FieldByName('capital').AsFloat > 0) or
+                     (adoquery1.FieldByName('comision').AsFloat > 0) then
                   begin
                       recibo:= adoquery1.FieldByName('numero').AsString;
+
                       Button1.Click;
+
                   end;
            end;
 
      end;
 
+
+end;
+
+procedure TForm1.QuickRep1BeforePrint(Sender: TCustomQuickRep;
+  var PrintReport: Boolean);
+begin
+       if UpperCase(metodo)='AMERICANO' then
+        begin
+            QRLabel56.Caption:='Interes recibido:'   ;
+            QRDBText33.DataField:='efectivo';
+
+            QRLabel46.Caption:='Capital recibido:'   ;
+            QRDBText27.DataField:='capital';
+
+            QRLabel51.Caption:='Capital pendiente:'   ;
+        end else
+        begin
+             QRLabel56.Caption:='Total pagado:'   ;
+             QRDBText33.DataField:='totalpagado';
+
+             QRLabel46.Caption:='Descuento:'   ;
+             QRDBText27.DataField:='mpncre';
+
+             QRLabel51.Caption:='Total pendiente:'   ;
+
+
+
+
+        end;
 
 end;
 

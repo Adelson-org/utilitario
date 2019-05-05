@@ -25,6 +25,7 @@ object Form1: TForm1
     Frame.DrawBottom = False
     Frame.DrawLeft = False
     Frame.DrawRight = False
+    BeforePrint = QuickRep1BeforePrint
     DataSet = ADOQuery1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -85,7 +86,7 @@ object Form1: TForm1
       Left = 48
       Top = 0
       Width = 192
-      Height = 281
+      Height = 288
       Frame.Color = clBlack
       Frame.DrawTop = False
       Frame.DrawBottom = False
@@ -97,7 +98,7 @@ object Form1: TForm1
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        743.479166666666700000
+        762.000000000000000000
         508.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -287,7 +288,7 @@ object Form1: TForm1
         AutoStretch = False
         Color = clWhite
         DataSet = ADOQuery1
-        DataField = 'mpfech'
+        DataField = 'fecha'
         Transparent = False
         WordWrap = True
         ExportAs = exptText
@@ -362,7 +363,7 @@ object Form1: TForm1
       object QRLabel46: TQRLabel
         Left = 43
         Top = 141
-        Width = 60
+        Width = 52
         Height = 12
         Frame.Color = clBlack
         Frame.DrawTop = False
@@ -373,13 +374,13 @@ object Form1: TForm1
           31.750000000000000000
           113.770833333333300000
           373.062500000000000000
-          158.750000000000000000)
+          137.583333333333300000)
         XLColumn = 0
-        Alignment = taLeftJustify
+        Alignment = taRightJustify
         AlignToBand = False
         AutoSize = True
         AutoStretch = False
-        Caption = 'Nota credito:'
+        Caption = 'Descuento:'
         Color = clWhite
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -423,7 +424,7 @@ object Form1: TForm1
         FontSize = 7
       end
       object QRLabel51: TQRLabel
-        Left = 28
+        Left = 21
         Top = 155
         Width = 74
         Height = 13
@@ -434,11 +435,11 @@ object Form1: TForm1
         Frame.DrawRight = False
         Size.Values = (
           34.395833333333330000
-          74.083333333333330000
+          55.562500000000000000
           410.104166666666700000
           195.791666666666700000)
         XLColumn = 0
-        Alignment = taLeftJustify
+        Alignment = taRightJustify
         AlignToBand = False
         AutoSize = True
         AutoStretch = False
@@ -477,7 +478,7 @@ object Form1: TForm1
         AutoStretch = False
         Color = clWhite
         DataSet = ADOQuery1
-        DataField = 'Ptota'
+        DataField = 'totalpendiente'
         Mask = 'RD$#,#0'
         Transparent = False
         WordWrap = True
@@ -504,7 +505,7 @@ object Form1: TForm1
         VertAdjust = 0
       end
       object QRLabel56: TQRLabel
-        Left = 40
+        Left = 32
         Top = 126
         Width = 63
         Height = 12
@@ -515,11 +516,11 @@ object Form1: TForm1
         Frame.DrawRight = False
         Size.Values = (
           31.750000000000000000
-          105.833333333333300000
+          84.666666666666670000
           333.375000000000000000
           166.687500000000000000)
         XLColumn = 0
-        Alignment = taLeftJustify
+        Alignment = taRightJustify
         AlignToBand = False
         AutoSize = True
         AutoStretch = False
@@ -558,7 +559,7 @@ object Form1: TForm1
         AutoStretch = False
         Color = clWhite
         DataSet = ADOQuery1
-        DataField = 'mptota'
+        DataField = 'totalpagado'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -9
@@ -752,8 +753,8 @@ object Form1: TForm1
         VertAdjust = 0
       end
       object QRImage1: TQRImage
-        Left = 69
-        Top = 178
+        Left = 67
+        Top = 172
         Width = 105
         Height = 35
         Frame.Color = clBlack
@@ -763,8 +764,8 @@ object Form1: TForm1
         Frame.DrawRight = False
         Size.Values = (
           92.604166666666670000
-          182.562500000000000000
-          470.958333333333300000
+          177.270833333333300000
+          455.083333333333300000
           277.812500000000000000)
         XLColumn = 0
         Picture.Data = {
@@ -1933,7 +1934,7 @@ object Form1: TForm1
     end
     object QRBand2: TQRBand
       Left = 48
-      Top = 281
+      Top = 288
       Width = 192
       Height = 90
       Frame.Color = clBlack
@@ -1973,8 +1974,8 @@ object Form1: TForm1
       end
     end
     object QRShape7: TQRShape
-      Left = 50
-      Top = 206
+      Left = 49
+      Top = 203
       Width = 229
       Height = 1
       Frame.Color = clBlack
@@ -1984,16 +1985,16 @@ object Form1: TForm1
       Frame.DrawRight = False
       Size.Values = (
         2.645833333333333000
-        132.291666666666700000
-        545.041666666666700000
+        129.645833333333300000
+        537.104166666666700000
         605.895833333333300000)
       XLColumn = 0
       Shape = qrsRectangle
       VertAdjust = 0
     end
     object QRLabel55: TQRLabel
-      Left = 122
-      Top = 210
+      Left = 121
+      Top = 207
       Width = 89
       Height = 12
       Frame.Color = clBlack
@@ -2003,8 +2004,8 @@ object Form1: TForm1
       Frame.DrawRight = False
       Size.Values = (
         31.750000000000000000
-        322.791666666666700000
-        555.625000000000000000
+        320.145833333333300000
+        547.687500000000000000
         235.479166666666700000)
       XLColumn = 0
       Alignment = taLeftJustify
@@ -2025,8 +2026,8 @@ object Form1: TForm1
       FontSize = 7
     end
     object QRMemo6: TQRMemo
-      Left = 52
-      Top = 240
+      Left = 51
+      Top = 237
       Width = 228
       Height = 32
       Frame.Color = clBlack
@@ -2036,8 +2037,8 @@ object Form1: TForm1
       Frame.DrawRight = False
       Size.Values = (
         84.666666666666670000
-        137.583333333333300000
-        635.000000000000000000
+        134.937500000000000000
+        627.062500000000000000
         603.250000000000000000)
       XLColumn = 0
       Alignment = taLeftJustify
@@ -2057,8 +2058,8 @@ object Form1: TForm1
       FontSize = 7
     end
     object QRLabel53: TQRLabel
-      Left = 51
-      Top = 224
+      Left = 50
+      Top = 221
       Width = 228
       Height = 13
       Frame.Color = clBlack
@@ -2068,8 +2069,8 @@ object Form1: TForm1
       Frame.DrawRight = False
       Size.Values = (
         34.395833333333330000
-        134.937500000000000000
-        592.666666666666700000
+        132.291666666666700000
+        584.729166666666700000
         603.250000000000000000)
       XLColumn = 0
       Alignment = taCenter
@@ -2090,8 +2091,8 @@ object Form1: TForm1
       FontSize = 7
     end
     object QRShape13: TQRShape
-      Left = 50
-      Top = 237
+      Left = 49
+      Top = 234
       Width = 229
       Height = 1
       Frame.Color = clBlack
@@ -2101,8 +2102,8 @@ object Form1: TForm1
       Frame.DrawRight = False
       Size.Values = (
         2.645833333333333000
-        132.291666666666700000
-        627.062500000000000000
+        129.645833333333300000
+        619.125000000000000000
         605.895833333333300000)
       XLColumn = 0
       Shape = qrsRectangle
