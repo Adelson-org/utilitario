@@ -3,7 +3,7 @@ SET @fecha=DATE(NOW());
 
 DROP TABLE IF EXISTS cuadre_; 
 CREATE TABLE cuadre_
-SELECT 'Inicio' Tipo, 0 Capital, 0 Interes, 0 GastoL, CAST(AVG(  38000 ) AS DECIMAL(12,2)) Total 
+SELECT 'Inicio' Tipo, 0 Capital, 0 Interes, 0 GastoL, CAST(AVG(  0 ) AS DECIMAL(12,2)) Total 
 UNION ALL
 SELECT 'Invertido' Tipo, CAST( IFNULL( SUM(c.capital -((p.gastolegales/p.montototal)*c.capital))*-1,0)  AS DECIMAL(12,2))   Capital, 
 	CAST( IFNULL( SUM(c.interes),0)  AS DECIMAL(12,2))  Interes , 
