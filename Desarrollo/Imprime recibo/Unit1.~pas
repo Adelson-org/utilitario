@@ -57,7 +57,7 @@ type
 
 var
   Form1: TForm1;
-  recibo,metodo:string;
+  recibo,prestamo,metodo:string;
 
 implementation
 
@@ -85,7 +85,7 @@ end;
 
 
 procedure TForm1.Button1Click(Sender: TObject);
-var tipopago,estatusprestamo,fechaprestamo,CONCEPTO,fechapago:string;
+var tipopago,estatusprestamo,fechaprestamo,CONCEPTO,fechapago,en_atraso:string;
 r:double;
 begin
 
@@ -100,6 +100,11 @@ begin
     'cl.nombre clnomb, cl.sector clsector,cl.direccion cldireccion, '+
 
     ' p.metodo '+
+
+    ''+
+    ''+
+    ''+
+
     ''+
     'from maestrodepago mp, prestamo p, cliente cl '+
     'where mp.prestamo=p.numero and cl.numero=p.cliente '+
@@ -107,10 +112,49 @@ begin
     ,'abrir');
 
 
+    //cuotas en atrasos
+    SENTENCIA(adoquery2,
+    'SELECT count(c.numero) cuotas '+
+    ' from cuota c where c.vencimiento <= now() and c.estatus in(''abonada'',''original'') and c.prestamo='''+prestamo+''''+
+    ' group by c.prestamo '+
+    '','abrir');
+
+     en_atraso :='0';
+     if adoquery2.recordcount>0 then//  .FieldByName('numero').Asinteger>0 then
+     begin
+         en_atraso :=adoquery2.FieldByName('cuotas').AsString;
+     end;
+
+
+
+    //preparar el concepto a mostrar en recibo
+    SENTENCIA(adoquery2,
+    'SELECT min(c.numero) cuota, c.estatus estatus, '+
+    ' (select  plazo from prestamo where numero=c.prestamo ) plazo, '+
+    ' (select  METODO from prestamo where numero=c.prestamo ) METODO '+
+    ' from cuota c where c.estatus in(''abonada'',''original'') and c.prestamo='''+prestamo+''''+
+    ' group by c.prestamo '+
+    '','abrir');
+
+     if adoquery2.recordcount>0 then//  .FieldByName('numero').Asinteger>0 then
+     if(UpperCase( adoquery2.FieldByName('METODO').Asstring) <>'AMERICANO')   then
+     if(UpperCase( adoquery2.FieldByName('estatus').Asstring) ='ABONADA')   then
+     begin
+          qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas, abonó a la #'+adoquery2.FieldByName('cuota').Asstring+' de  #'+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' cuotas en atraso';
+     end else
+     begin
+          qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas, la próxima es la #'+adoquery2.FieldByName('cuota').Asstring+' de  #'+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' cuotas en atraso';
+     end;
+
+
+
+
+
+
     metodo:=ADOQuery1.fieldbyname('metodo').AsString;
 
 
-
+        {
     //preparar el concepto a mostrar en recibo
     SENTENCIA(adoquery2,
     'SELECT p.fecha fecha, P.PLAZO, hp.estatusPrestamo, MP.TIPODEPAGO, MP.TOTALPAGADO, mp.notadecredito,  mp.nota mpnota, '+
@@ -128,7 +172,7 @@ begin
                 qrmemo4.lines.Text :=adoquery2.FieldByName('direccion').Asstring;
                 qrmemo6.lines.Text :=adoquery2.FieldByName('mpnota').Asstring;
            end;
-
+               }
 
       QuickRep1.Print;
 
@@ -140,7 +184,7 @@ end;
 procedure TForm1.Timer1Timer(Sender: TObject);
 begin
 
-    SENTENCIA(adoquery1,'select numero,efectivo,capital,comision from maestrodepago order by numero desc limit 1'
+    SENTENCIA(adoquery1,'select numero,efectivo,capital,comision,prestamo from maestrodepago order by numero desc limit 1'
     ,'abrir');
 
     if adoquery1.RecordCount>0 then
@@ -148,6 +192,7 @@ begin
            if (recibo=EmptyStr)
            then  begin
                   recibo:= adoquery1.FieldByName('numero').AsString;
+                  prestamo:= adoquery1.FieldByName('prestamo').AsString;
                   abort;
            end;
 
@@ -160,6 +205,7 @@ begin
                      (adoquery1.FieldByName('comision').AsFloat > 0) then
                   begin
                       recibo:= adoquery1.FieldByName('numero').AsString;
+                      prestamo:= adoquery1.FieldByName('prestamo').AsString;
 
                       Button1.Click;
 

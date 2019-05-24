@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 301
   Top = 124
-  Width = 399
+  Width = 463
   Height = 640
   Caption = 'Form1'
   Color = clBtnFace
@@ -18,7 +18,7 @@ object Form1: TForm1
   object QuickRep1: TQuickRep
     Left = 76
     Top = 106
-    Width = 250
+    Width = 317
     Height = 427
     Frame.Color = clBlack
     Frame.DrawTop = False
@@ -85,8 +85,8 @@ object Form1: TForm1
     object QRBand1: TQRBand
       Left = 48
       Top = 0
-      Width = 192
-      Height = 288
+      Width = 259
+      Height = 311
       Frame.Color = clBlack
       Frame.DrawTop = False
       Frame.DrawBottom = False
@@ -98,8 +98,8 @@ object Form1: TForm1
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        762.000000000000000000
-        508.000000000000000000)
+        822.854166666666700000
+        685.270833333333300000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbTitle
@@ -1934,8 +1934,8 @@ object Form1: TForm1
     end
     object QRBand2: TQRBand
       Left = 48
-      Top = 288
-      Width = 192
+      Top = 311
+      Width = 259
       Height = 90
       Frame.Color = clBlack
       Frame.DrawTop = False
@@ -1949,7 +1949,7 @@ object Form1: TForm1
       ForceNewPage = False
       Size.Values = (
         238.125000000000000000
-        508.000000000000000000)
+        685.270833333333300000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbPageFooter
@@ -2027,18 +2027,18 @@ object Form1: TForm1
     end
     object QRMemo6: TQRMemo
       Left = 51
-      Top = 237
+      Top = 239
       Width = 228
-      Height = 32
+      Height = 66
       Frame.Color = clBlack
       Frame.DrawTop = False
       Frame.DrawBottom = False
       Frame.DrawLeft = False
       Frame.DrawRight = False
       Size.Values = (
-        84.666666666666670000
+        174.625000000000000000
         134.937500000000000000
-        627.062500000000000000
+        632.354166666666700000
         603.250000000000000000)
       XLColumn = 0
       Alignment = taLeftJustify
@@ -2048,14 +2048,14 @@ object Form1: TForm1
       Color = clWhite
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -9
+      Font.Height = -15
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
       Transparent = False
       WordWrap = True
       FullJustify = False
-      FontSize = 7
+      FontSize = 11
     end
     object QRLabel53: TQRLabel
       Left = 50
