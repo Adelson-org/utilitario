@@ -136,16 +136,23 @@ begin
     ' group by c.prestamo '+
     '','abrir');
 
-     if adoquery2.recordcount>0 then//  .FieldByName('numero').Asinteger>0 then
-     if(UpperCase( adoquery2.FieldByName('METODO').Asstring) <>'AMERICANO')   then
-     if(UpperCase( adoquery2.FieldByName('estatus').Asstring) ='ABONADA')   then
+
+    
+     qrmemo6.lines.Clear;
+     if adoquery2.recordcount>0 then
      begin
-          qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas, abonó a la #'+adoquery2.FieldByName('cuota').Asstring+' de #'+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' cuotas en atraso';
+           if(UpperCase( adoquery2.FieldByName('METODO').Asstring) <>'AMERICANO')   then
+           if(UpperCase( adoquery2.FieldByName('estatus').Asstring) ='ABONADA')   then
+           begin
+                qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas, abonó a la #'+adoquery2.FieldByName('cuota').Asstring+' de #'+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' cuotas en atraso';
+           end else
+           begin
+                qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas, la próxima es la #'+adoquery2.FieldByName('cuota').Asstring+' de #'+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' cuotas en atraso';
+           end;
      end else
      begin
-          qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas, la próxima es la #'+adoquery2.FieldByName('cuota').Asstring+' de #'+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' cuotas en atraso';
+          qrmemo6.lines.Text :='Has saldado su prestamo #'+prestamo;
      end;
-
 
 
 
