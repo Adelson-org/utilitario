@@ -144,10 +144,10 @@ begin
            if(UpperCase( adoquery2.FieldByName('METODO').Asstring) <>'AMERICANO')   then
            if(UpperCase( adoquery2.FieldByName('estatus').Asstring) ='ABONADA')   then
            begin
-                qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas, abonó a la #'+adoquery2.FieldByName('cuota').Asstring+' de #'+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' cuotas en atraso';
+                qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
            end else
            begin
-                qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas, la próxima es la #'+adoquery2.FieldByName('cuota').Asstring+' de #'+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' cuotas en atraso';
+                qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
            end;
      end else
      begin
