@@ -147,7 +147,7 @@ begin
                 qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
            end else
            begin
-                qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas de #'+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
+                qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
            end;
      end else
      begin
