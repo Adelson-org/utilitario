@@ -129,10 +129,11 @@ begin
 
     //preparar el concepto a mostrar en recibo
     SENTENCIA(adoquery2,
-    'SELECT min(c.numero) cuota, c.estatus estatus, '+
+    'SELECT c.estatus estatus, '+
+    ' (select count(numero) from cuota where prestamo=c.prestamo and estatus=''saldada'' ) cuota, '+
     ' (select  plazo from prestamo where numero=c.prestamo ) plazo, '+
     ' (select  METODO from prestamo where numero=c.prestamo ) METODO '+
-    ' from cuota c where c.estatus in(''abonada'',''original'') and c.prestamo='''+prestamo+''''+
+    ' from cuota c where c.estatus in(''saldada'') and c.prestamo='''+prestamo+''''+
     ' group by c.prestamo '+
     '','abrir');
 
@@ -142,13 +143,15 @@ begin
      if adoquery2.recordcount>0 then
      begin
            if(UpperCase( adoquery2.FieldByName('METODO').Asstring) <>'AMERICANO')   then
-           if(UpperCase( adoquery2.FieldByName('estatus').Asstring) ='ABONADA')   then
+           //if(UpperCase( adoquery2.FieldByName('estatus').Asstring) ='ABONADA')   then
            begin
-                qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
-           end else
+                qrmemo6.lines.Text :='Has pagado '+adoquery2.FieldByName('cuota').AsString +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
+           end ;
+          { else
            begin
                 qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
            end;
+           }
      end else
      begin
           qrmemo6.lines.Text :='Has saldado su prestamo #'+prestamo;
