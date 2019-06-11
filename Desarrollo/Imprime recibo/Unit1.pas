@@ -93,7 +93,7 @@ begin
      //esto es para la sumatoria de abajo del recibo
      //y el pendiente para el recibo
     SENTENCIA(adoquery1,
-    'select mp.numero mpnume, mp.efectivo, mp.capital,  mp.totalpagado totalpagado, mp.fecha fecha, '+
+    'select mp.numero mpnume, mp.efectivo+mp.comision efectivo, mp.capital,  mp.totalpagado totalpagado, mp.fecha fecha, '+
     'mp.notadecredito+mp.descuentointeres mpncre, '+
     'case p.metodo when ''americano'' then mp.capitalpendiente else mp.interespendiente + mp.capitalpendiente end totalpendiente, '+
 
@@ -216,6 +216,7 @@ begin
                   begin
                       recibo:= adoquery1.FieldByName('numero').AsString;
                       prestamo:= adoquery1.FieldByName('prestamo').AsString;
+
 
                       Button1.Click;
 
