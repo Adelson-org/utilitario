@@ -2050,14 +2050,14 @@ object Form1: TForm1
       Color = clWhite
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -13
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
       Transparent = False
       WordWrap = True
       FullJustify = False
-      FontSize = 11
+      FontSize = 10
     end
     object QRLabel53: TQRLabel
       Left = 50
@@ -2113,13 +2113,22 @@ object Form1: TForm1
     end
   end
   object Button1: TButton
-    Left = 296
-    Top = 40
+    Left = 252
+    Top = 72
     Width = 75
     Height = 25
-    Caption = 'Button1'
+    Caption = 'Imprimir'
     TabOrder = 1
     OnClick = Button1Click
+  end
+  object Edit_recibo: TEdit
+    Left = 204
+    Top = 39
+    Width = 121
+    Height = 21
+    TabOrder = 2
+    OnEnter = Edit_reciboEnter
+    OnKeyPress = Edit_reciboKeyPress
   end
   object ADOConnection1: TADOConnection
     CommandTimeout = 0
@@ -2129,20 +2138,20 @@ object Form1: TForm1
       'amos2;Initial Catalog=prestamos2'
     ConnectionTimeout = 0
     LoginPrompt = False
-    Left = 128
-    Top = 24
+    Left = 24
+    Top = 8
   end
   object ADOQuery1: TADOQuery
     Connection = ADOConnection1
     Parameters = <>
-    Left = 168
-    Top = 24
+    Left = 64
+    Top = 8
   end
   object ADOQuery2: TADOQuery
     Connection = ADOConnection1
     Parameters = <>
-    Left = 200
-    Top = 24
+    Left = 96
+    Top = 8
   end
   object Timer1: TTimer
     Interval = 3000

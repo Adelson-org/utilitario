@@ -45,10 +45,13 @@ type
     QRShape13: TQRShape;
     QRImage1: TQRImage;
     Timer1: TTimer;
+    Edit_recibo: TEdit;
     procedure Button1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure QuickRep1BeforePrint(Sender: TCustomQuickRep;
       var PrintReport: Boolean);
+    procedure Edit_reciboEnter(Sender: TObject);
+    procedure Edit_reciboKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -89,11 +92,17 @@ var tipopago,estatusprestamo,fechaprestamo,CONCEPTO,fechapago,en_atraso:string;
 r:double;
 begin
 
+     //si se entro al campo de recibo y se escribio un numero de recibo
+     if(not(timer1.Enabled)) and (trim(Edit_recibo.Text)<>EmptyStr) then
+     begin
+          recibo:=trim(Edit_recibo.Text);
+     end;
+
 
      //esto es para la sumatoria de abajo del recibo
      //y el pendiente para el recibo
     SENTENCIA(adoquery1,
-    'select mp.numero mpnume, mp.efectivo+mp.comision efectivo, mp.capital,  mp.totalpagado totalpagado, mp.fecha fecha, '+
+    'select mp.numero mpnume, mp.efectivo+mp.comision efectivo, mp.capital,  mp.totalpagado totalpagado, mp.fecha fecha, mp.nota, '+
     'mp.notadecredito+mp.descuentointeres mpncre, '+
     'case p.metodo when ''americano'' then mp.capitalpendiente else mp.interespendiente + mp.capitalpendiente end totalpendiente, '+
 
@@ -140,49 +149,51 @@ begin
 
     
      qrmemo6.lines.Clear;
-     if adoquery2.recordcount>0 then
+     if(Timer1.Enabled) then
      begin
-           if(UpperCase( adoquery2.FieldByName('METODO').Asstring) <>'AMERICANO')   then
-           //if(UpperCase( adoquery2.FieldByName('estatus').Asstring) ='ABONADA')   then
-           begin
-                qrmemo6.lines.Text :='Has pagado '+adoquery2.FieldByName('cuota').AsString +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
-           end ;
-          { else
-           begin
-                qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
-           end;
-           }
-     end else
-     begin
-          qrmemo6.lines.Text :='Has saldado su prestamo #'+prestamo;
-     end;
+            if adoquery2.recordcount>0 then
+            begin
+                  if(UpperCase( adoquery2.FieldByName('METODO').Asstring) <>'AMERICANO')   then
+                  //if(UpperCase( adoquery2.FieldByName('estatus').Asstring) ='ABONADA')   then
+                  begin
+                       qrmemo6.lines.Text :='Has pagado '+adoquery2.FieldByName('cuota').AsString +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
+                  end ;
+                 { else
+                  begin
+                       qrmemo6.lines.Text :='Has pagado '+inttostr( adoquery2.FieldByName('cuota').AsInteger -1 ) +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
+                  end;
+                  }
+            end else
+            begin
+                 qrmemo6.lines.Text :='Has saldado su prestamo #'+prestamo;
+            end;
+     end else qrmemo6.lines.Text:= ADOQuery1.fieldbyname('nota').AsString;
 
 
-
+     //la pongo mayuscula la nota
+     qrmemo6.lines.Text:=UpperCase(qrmemo6.lines.Text);
 
 
     metodo:=ADOQuery1.fieldbyname('metodo').AsString;
 
 
-        {
-    //preparar el concepto a mostrar en recibo
-    SENTENCIA(adoquery2,
-    'SELECT p.fecha fecha, P.PLAZO, hp.estatusPrestamo, MP.TIPODEPAGO, MP.TOTALPAGADO, mp.notadecredito,  mp.nota mpnota, '+
-    ' dp.concepto,dp.cuota, sum(dp.interes+dp.capital) MONTO, dp.nota,'+
-    ' s.nombre sucursal, s.direccion'+
-    ' FROM HistorialPago hp, maestrodepago MP, prestamo p, detalledepago dp, sucursal s  '+
-    ' WHERE hp.pago=mp.numero and p.numero=mp.prestamo and mp.numero=dp.maestrodepago and mp.NUMERO='+recibo+' and mp.sucursal=s.numero'+
-    ' group by dp.cuota'
-    ,'abrir');
 
 
-           if adoquery2.recordcount>0 then//  .FieldByName('numero').Asinteger>0 then
-           begin
-                qrlabel40.Caption:=adoquery2.FieldByName('sucursal').Asstring;
-                qrmemo4.lines.Text :=adoquery2.FieldByName('direccion').Asstring;
-                qrmemo6.lines.Text :=adoquery2.FieldByName('mpnota').Asstring;
-           end;
-               }
+     //si el timer esta apagado, encenderlo, para que siga automatico
+     if(timer1.Enabled) then
+     begin
+           SENTENCIA(adoquery2,'update maestrodepago set nota='''+qrmemo6.lines.Text+''' where numero='''+recibo+'''  '+
+          '','ejecutar');
+
+     end else
+     begin
+          Edit_recibo.Text:=EmptyStr;
+          timer1.Enabled:=true;
+          recibo:=EmptyStr;
+     end;
+
+
+
 
       QuickRep1.Print;
 
@@ -255,6 +266,19 @@ begin
 
         end;
 
+end;
+
+procedure TForm1.Edit_reciboEnter(Sender: TObject);
+begin
+       timer1.Enabled:=false;
+end;
+
+procedure TForm1.Edit_reciboKeyPress(Sender: TObject; var Key: Char);
+begin
+      if(key=#13) then
+      begin
+          Button1.Click;
+      end;
 end;
 
 end.
