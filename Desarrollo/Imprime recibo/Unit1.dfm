@@ -104,7 +104,7 @@ object Form1: TForm1
       KeepOnOnePage = False
       BandType = rbTitle
       object QRLabel27: TQRLabel
-        Left = 3
+        Left = 1
         Top = 65
         Width = 36
         Height = 12
@@ -115,7 +115,7 @@ object Form1: TForm1
         Frame.DrawRight = False
         Size.Values = (
           31.750000000000000000
-          7.937500000000000000
+          2.645833333333333000
           171.979166666666700000
           95.250000000000000000)
         XLColumn = 0
@@ -137,9 +137,9 @@ object Form1: TForm1
         FontSize = 7
       end
       object QRLabel28: TQRLabel
-        Left = 131
+        Left = 81
         Top = 65
-        Width = 31
+        Width = 30
         Height = 12
         Frame.Color = clBlack
         Frame.DrawTop = False
@@ -148,15 +148,15 @@ object Form1: TForm1
         Frame.DrawRight = False
         Size.Values = (
           31.750000000000000000
-          346.604166666666700000
+          214.312500000000000000
           171.979166666666700000
-          82.020833333333330000)
+          79.375000000000000000)
         XLColumn = 0
         Alignment = taLeftJustify
         AlignToBand = False
         AutoSize = True
         AutoStretch = False
-        Caption = 'Fecha:'
+        Caption = 'Inicio:'
         Color = clWhite
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -203,9 +203,9 @@ object Form1: TForm1
         FontSize = 7
       end
       object QRDBText17: TQRDBText
-        Left = 39
+        Left = 37
         Top = 65
-        Width = 74
+        Width = 33
         Height = 13
         Frame.Color = clBlack
         Frame.DrawTop = False
@@ -214,9 +214,9 @@ object Form1: TForm1
         Frame.DrawRight = False
         Size.Values = (
           34.395833333333330000
-          103.187500000000000000
+          97.895833333333330000
           171.979166666666700000
-          195.791666666666700000)
+          87.312500000000000000)
         XLColumn = 0
         Alignment = taRightJustify
         AlignToBand = False
@@ -267,9 +267,9 @@ object Form1: TForm1
         FontSize = 7
       end
       object QRDBText21: TQRDBText
-        Left = 164
+        Left = 109
         Top = 65
-        Width = 63
+        Width = 38
         Height = 13
         Frame.Color = clBlack
         Frame.DrawTop = False
@@ -278,9 +278,9 @@ object Form1: TForm1
         Frame.DrawRight = False
         Size.Values = (
           34.395833333333330000
-          433.916666666666700000
+          288.395833333333300000
           171.979166666666700000
-          166.687500000000000000)
+          100.541666666666700000)
         XLColumn = 0
         Alignment = taRightJustify
         AlignToBand = False
@@ -288,7 +288,8 @@ object Form1: TForm1
         AutoStretch = False
         Color = clWhite
         DataSet = ADOQuery1
-        DataField = 'fecha'
+        DataField = 'fechainicio'
+        Mask = 'dd/mm/yy'
         Transparent = False
         WordWrap = True
         ExportAs = exptText
@@ -1932,6 +1933,69 @@ object Form1: TForm1
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
         Stretch = True
+      end
+      object QRLabel2: TQRLabel
+        Left = 151
+        Top = 65
+        Width = 31
+        Height = 12
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          31.750000000000000000
+          399.520833333333300000
+          171.979166666666700000
+          82.020833333333330000)
+        XLColumn = 0
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Fecha:'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -9
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        ExportAs = exptText
+        FontSize = 7
+      end
+      object QRDBText3: TQRDBText
+        Left = 180
+        Top = 65
+        Width = 44
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          34.395833333333330000
+          476.250000000000000000
+          171.979166666666700000
+          116.416666666666700000)
+        XLColumn = 0
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Color = clWhite
+        DataSet = ADOQuery1
+        DataField = 'fecha'
+        Mask = 'dd/mm/yy'
+        Transparent = False
+        WordWrap = True
+        ExportAs = exptText
+        FullJustify = False
+        FontSize = 7
       end
     end
     object QRBand2: TQRBand

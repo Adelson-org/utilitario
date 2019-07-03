@@ -46,6 +46,8 @@ type
     QRImage1: TQRImage;
     Timer1: TTimer;
     Edit_recibo: TEdit;
+    QRLabel2: TQRLabel;
+    QRDBText3: TQRDBText;
     procedure Button1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure QuickRep1BeforePrint(Sender: TCustomQuickRep;
@@ -99,8 +101,7 @@ begin
      end;
 
 
-     //esto es para la sumatoria de abajo del recibo
-     //y el pendiente para el recibo
+    //estos son los datos del recibo
     SENTENCIA(adoquery1,
     'select mp.numero mpnume, mp.efectivo+mp.comision efectivo, mp.capital,  mp.totalpagado totalpagado, mp.fecha fecha, mp.nota, '+
     'mp.notadecredito+mp.descuentointeres mpncre, '+
@@ -108,9 +109,9 @@ begin
 
     'cl.nombre clnomb, cl.sector clsector,cl.direccion cldireccion, '+
 
-    ' p.metodo '+
+    ' p.metodo, p.fechainicio '+
 
-    ''+
+    ' '+
     ''+
     ''+
 
@@ -142,7 +143,7 @@ begin
     ' (select count(numero) from cuota where prestamo=c.prestamo and estatus=''saldada'' ) cuota, '+
     ' (select  plazo from prestamo where numero=c.prestamo ) plazo, '+
     ' (select  METODO from prestamo where numero=c.prestamo ) METODO '+
-    ' from cuota c where c.estatus in(''saldada'') and c.prestamo='''+prestamo+''''+
+    ' from cuota c where c.estatus in(''saldada'',''abonada'') and c.prestamo='''+prestamo+''''+
     ' group by c.prestamo '+
     '','abrir');
 
