@@ -124,7 +124,7 @@ begin
 
     //cuotas en atrasos
     SENTENCIA(adoquery2,
-    'SELECT count(c.numero) cuotas '+
+    'SELECT count(c.numero)  cuotas '+
     ' from cuota c where c.vencimiento <= now() and c.estatus in(''abonada'',''original'') and c.prestamo='''+prestamo+''''+
     ' group by c.prestamo '+
     '','abrir');
@@ -166,7 +166,8 @@ begin
                   }
             end else
             begin
-                 qrmemo6.lines.Text :='Has saldado su prestamo #'+prestamo;
+                 //qrmemo6.lines.Text :='Has saldado su prestamo #'+prestamo;
+                 qrmemo6.lines.Text :='Su prestamo esta al dia';
             end;
      end else qrmemo6.lines.Text:= ADOQuery1.fieldbyname('nota').AsString;
 
