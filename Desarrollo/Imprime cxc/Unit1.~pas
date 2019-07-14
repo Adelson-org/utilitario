@@ -17,7 +17,6 @@ type
     QRShape11: TQRShape;
     Button1: TButton;
     ADOQuery2: TADOQuery;
-    Timer1: TTimer;
     ComboBox1: TComboBox;
     QRSysData1: TQRSysData;
     QRGroup1: TQRGroup;
@@ -25,8 +24,9 @@ type
     QRDBText2: TQRDBText;
     QRExpr1: TQRExpr;
     QRDBText1: TQRDBText;
-    QRLFiltro: TQRLabel;
+    QRFormapago: TQRLabel;
     QRShape1: TQRShape;
+    QRShape2: TQRShape;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -68,17 +68,17 @@ procedure TForm1.Button1Click(Sender: TObject);
 begin
 
     SENTENCIA(adoquery1,' '+
-    ' SELECT cl.sector, cl.nombre cliente, p.`inicial` cuota '+
-    ' FROM cliente cl, prestamo p '+
-    ' WHERE p.cliente=cl.numero '+
-    ' and cl.referencia='''+ComboBox1.Text+''''+
-    '  AND p.`Estatus` IN(''original'',''abonado'') '+
-    ' GROUP BY cl.sector, cl.nombre,p.numero'+
-    ' ORDER BY cl.sector, cl.nombre'+
+    ' SELECT e.nombre empleador, cl.nombre cliente, p.`inicial` cuota '+
+    ' FROM cliente cl, empleador e, prestamo p'+
+    ' WHERE p.cliente=cl.numero and cl.empleador=e.numero '+
+    ' and LOWER(trim(cl.referencia))='''+LowerCase( ComboBox1.Text )+''''+
+    ' AND p.`Estatus` IN(''original'',''abonado'') '+
+    ' GROUP BY e.nombre,cl.nombre,p.numero '+
+    ' ORDER BY e.nombre, cl.nombre '+
      ''
     ,'abrir');
 
-    QRLFiltro.Caption:=ComboBox1.Text;
+    QRFormapago.Caption:=ComboBox1.Text;
 
      QuickRep1.Print;
 
@@ -93,9 +93,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-     ComboBox1.Text:='cxc diario';
-
-     {
+       {
       SENTENCIA(adoquery1,'select nombre from vendedor where comision>0 order by nombre asc','abrir');
 
       ComboBox1.Clear;
