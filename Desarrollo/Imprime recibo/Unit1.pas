@@ -62,7 +62,7 @@ type
 
 var
   Form1: TForm1;
-  recibo,prestamo,metodo:string;
+  recibo,prestamo,metodo,fecha_pago:string;
 
 implementation
 
@@ -90,7 +90,7 @@ end;
 
 
 procedure TForm1.Button1Click(Sender: TObject);
-var tipopago,estatusprestamo,fechaprestamo,CONCEPTO,fechapago,en_atraso:string;
+var tipopago,estatusprestamo,fechaprestamo,CONCEPTO,en_atraso:string;
 r:double;
 begin
 
@@ -125,10 +125,11 @@ begin
     //cuotas en atrasos
     SENTENCIA(adoquery2,
     'SELECT count(c.numero)  cuotas '+
-    ' from cuota c where c.vencimiento <= now() and c.estatus in(''abonada'',''original'') and c.prestamo='''+prestamo+''''+
+    ' from cuota c where c.vencimiento <= '''+fecha_pago+''' and c.estatus in(''original'',''abonada'') and c.prestamo='''+prestamo+''''+
     ' group by c.prestamo '+
     '','abrir');
 
+    
      en_atraso :='0';
      if adoquery2.recordcount>0 then//  .FieldByName('numero').Asinteger>0 then
      begin
@@ -140,7 +141,7 @@ begin
     //preparar el concepto a mostrar en recibo
     SENTENCIA(adoquery2,
     'SELECT c.estatus estatus, '+
-    ' (select count(numero) from cuota where prestamo=c.prestamo and estatus=''saldada'' ) cuota, '+
+    ' ifnull((select count(numero) from cuota where prestamo=c.prestamo and estatus=''saldada'' ),0)  cuota, '+
     ' (select  plazo from prestamo where numero=c.prestamo ) plazo, '+
     ' (select  METODO from prestamo where numero=c.prestamo ) METODO '+
     ' from cuota c where c.estatus in(''saldada'',''abonada'') and c.prestamo='''+prestamo+''''+
@@ -148,7 +149,7 @@ begin
     '','abrir');
 
 
-    
+
      qrmemo6.lines.Clear;
      if(Timer1.Enabled) then
      begin
@@ -157,7 +158,7 @@ begin
                   if(UpperCase( adoquery2.FieldByName('METODO').Asstring) <>'AMERICANO')   then
                   //if(UpperCase( adoquery2.FieldByName('estatus').Asstring) ='ABONADA')   then
                   begin
-                       qrmemo6.lines.Text :='Has pagado '+adoquery2.FieldByName('cuota').AsString +' cuotas de '+adoquery2.FieldByName('plazo').Asstring +' y tienes '+en_atraso+' en atraso';
+                       qrmemo6.lines.Text :='Has pagado '+adoquery2.FieldByName('cuota').AsString +' cuota de '+adoquery2.FieldByName('plazo').Asstring +' y tiene '+en_atraso+' atraso' ;
                   end ;
                  { else
                   begin
@@ -207,7 +208,7 @@ end;
 procedure TForm1.Timer1Timer(Sender: TObject);
 begin
 
-    SENTENCIA(adoquery1,'select numero,efectivo,capital,comision,prestamo from maestrodepago order by numero desc limit 1'
+    SENTENCIA(adoquery1,'select numero,efectivo,capital,comision,prestamo,fecha from maestrodepago order by numero desc limit 1'
     ,'abrir');
 
     if adoquery1.RecordCount>0 then
@@ -216,6 +217,7 @@ begin
            then  begin
                   recibo:= adoquery1.FieldByName('numero').AsString;
                   prestamo:= adoquery1.FieldByName('prestamo').AsString;
+                  fecha_pago  :=FormatDateTime('yyyymmdd', adoquery1.FieldByName('fecha').AsDateTime);
                   abort;
            end;
 
@@ -229,7 +231,7 @@ begin
                   begin
                       recibo:= adoquery1.FieldByName('numero').AsString;
                       prestamo:= adoquery1.FieldByName('prestamo').AsString;
-
+                      fecha_pago  :=FormatDateTime('yyyymmdd', adoquery1.FieldByName('fecha').AsDateTime);
 
                       Button1.Click;
 

@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 301
-  Top = 124
-  Width = 479
-  Height = 640
+  Left = 159
+  Top = 108
+  Width = 861
+  Height = 606
   Caption = 'CXC POR FORMA DE PAGO'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,9 +16,9 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object QuickRep1: TQuickRep
-    Left = 76
-    Top = 106
-    Width = 317
+    Left = -204
+    Top = 538
+    Width = 250
     Height = 427
     Frame.Color = clBlack
     Frame.DrawTop = False
@@ -84,7 +84,7 @@ object Form1: TForm1
     object QRBand1: TQRBand
       Left = 48
       Top = 0
-      Width = 259
+      Width = 192
       Height = 78
       Frame.Color = clBlack
       Frame.DrawTop = False
@@ -98,7 +98,7 @@ object Form1: TForm1
       ForceNewPage = False
       Size.Values = (
         206.375000000000000000
-        685.270833333333300000)
+        508.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbTitle
@@ -240,7 +240,7 @@ object Form1: TForm1
     object QRGroup1: TQRGroup
       Left = 48
       Top = 78
-      Width = 259
+      Width = 192
       Height = 28
       Frame.Color = clBlack
       Frame.DrawTop = False
@@ -254,7 +254,7 @@ object Form1: TForm1
       ForceNewPage = False
       Size.Values = (
         74.083333333333330000
-        685.270833333333300000)
+        508.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       Expression = 'empleador'
@@ -318,7 +318,7 @@ object Form1: TForm1
     object QRBand2: TQRBand
       Left = 48
       Top = 106
-      Width = 259
+      Width = 192
       Height = 20
       Frame.Color = clBlack
       Frame.DrawTop = False
@@ -332,7 +332,7 @@ object Form1: TForm1
       ForceNewPage = False
       Size.Values = (
         52.916666666666670000
-        685.270833333333300000)
+        508.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbDetail
@@ -422,12 +422,12 @@ object Form1: TForm1
       end
     end
   end
-  object Button1: TButton
-    Left = 311
-    Top = 53
-    Width = 75
-    Height = 25
-    Caption = 'Imprimir'
+  object PageControl1: TPageControl
+    Left = 16
+    Top = 8
+    Width = 809
+    Height = 513
+    ActivePage = TabSheet1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -435,22 +435,165 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    OnClick = Button1Click
-  end
-  object ComboBox1: TComboBox
-    Left = 120
-    Top = 56
-    Width = 161
-    Height = 21
-    AutoDropDown = True
-    ItemHeight = 13
-    TabOrder = 2
-    Text = 'CXC DIARIO'
-    Items.Strings = (
-      'CXC DIARIO'
-      'CXC SEMANAL'
-      'CXC QUINCENAL'
-      'CXC MENSUAL')
+    object TabSheet1: TTabSheet
+      Caption = 'REPORTES'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      object GroupBox1: TGroupBox
+        Left = 8
+        Top = 12
+        Width = 289
+        Height = 81
+        Caption = 'CXC'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        object Button1: TButton
+          Left = 190
+          Top = 37
+          Width = 75
+          Height = 25
+          Caption = 'Imprimir'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 0
+          OnClick = Button1Click
+        end
+        object ComboBox1: TComboBox
+          Left = 16
+          Top = 40
+          Width = 161
+          Height = 21
+          AutoDropDown = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ItemHeight = 13
+          ParentFont = False
+          TabOrder = 1
+          Text = 'CXC DIARIO'
+          Items.Strings = (
+            'CXC DIARIO'
+            'CXC SEMANAL'
+            'CXC QUINCENAL'
+            'CXC MENSUAL')
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'MANTENIMIENTOS'
+      ImageIndex = 1
+      object GroupBox2: TGroupBox
+        Left = 10
+        Top = 13
+        Width = 351
+        Height = 84
+        Caption = 'Suma o resta un monto al capital de la ultima cuota'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 16
+          Top = 32
+          Width = 44
+          Height = 13
+          Caption = 'Prestamo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label2: TLabel
+          Left = 98
+          Top = 32
+          Width = 30
+          Height = 13
+          Caption = 'Monto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Prestamo_edit: TEdit
+          Left = 16
+          Top = 48
+          Width = 81
+          Height = 21
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Sumar_Button: TButton
+          Left = 192
+          Top = 45
+          Width = 71
+          Height = 25
+          Caption = 'Sumar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+          OnClick = Sumar_ButtonClick
+        end
+        object Monto_edit: TEdit
+          Left = 98
+          Top = 48
+          Width = 89
+          Height = 21
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Restar_button: TButton
+          Left = 268
+          Top = 45
+          Width = 71
+          Height = 25
+          Caption = 'Restar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 3
+          OnClick = Restar_buttonClick
+        end
+      end
+    end
   end
   object ADOConnection1: TADOConnection
     CommandTimeout = 0
@@ -460,20 +603,20 @@ object Form1: TForm1
       'amos2;Initial Catalog=prestamos2'
     ConnectionTimeout = 0
     LoginPrompt = False
-    Left = 120
-    Top = 16
+    Left = 72
+    Top = 536
   end
   object ADOQuery1: TADOQuery
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 160
-    Top = 16
+    Left = 112
+    Top = 536
   end
   object ADOQuery2: TADOQuery
     Connection = ADOConnection1
     Parameters = <>
-    Left = 192
-    Top = 16
+    Left = 144
+    Top = 536
   end
 end

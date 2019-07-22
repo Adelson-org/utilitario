@@ -18,7 +18,7 @@ object Form1: TForm1
   object QuickRep1: TQuickRep
     Left = 76
     Top = 106
-    Width = 277
+    Width = 333
     Height = 427
     Frame.Color = clBlack
     Frame.DrawTop = False
@@ -85,7 +85,7 @@ object Form1: TForm1
     object QRBand1: TQRBand
       Left = 48
       Top = 0
-      Width = 219
+      Width = 275
       Height = 311
       Frame.Color = clBlack
       Frame.DrawTop = False
@@ -99,7 +99,7 @@ object Form1: TForm1
       ForceNewPage = False
       Size.Values = (
         822.854166666666700000
-        579.437500000000000000)
+        727.604166666666700000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbTitle
@@ -2001,7 +2001,7 @@ object Form1: TForm1
     object QRBand2: TQRBand
       Left = 48
       Top = 311
-      Width = 219
+      Width = 275
       Height = 90
       Frame.Color = clBlack
       Frame.DrawTop = False
@@ -2015,7 +2015,7 @@ object Form1: TForm1
       ForceNewPage = False
       Size.Values = (
         238.125000000000000000
-        579.437500000000000000)
+        727.604166666666700000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbPageFooter
@@ -2094,7 +2094,7 @@ object Form1: TForm1
     object QRMemo6: TQRMemo
       Left = 51
       Top = 239
-      Width = 228
+      Width = 226
       Height = 66
       Frame.Color = clBlack
       Frame.DrawTop = False
@@ -2105,7 +2105,7 @@ object Form1: TForm1
         174.625000000000000000
         134.937500000000000000
         632.354166666666700000
-        603.250000000000000000)
+        597.958333333333300000)
       XLColumn = 0
       Alignment = taLeftJustify
       AlignToBand = False
@@ -2116,7 +2116,7 @@ object Form1: TForm1
       Font.Color = clWindowText
       Font.Height = -13
       Font.Name = 'Arial'
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentFont = False
       Transparent = False
       WordWrap = True

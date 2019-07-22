@@ -1,4 +1,4 @@
-program ImprimeCXC;
+program Actualizaciones;
 
 uses
   Forms,
