@@ -11,7 +11,7 @@ WHERE p.`Numero`=c.`Prestamo` AND b.empleador=e.numero
 AND p.`Cliente`=b.`Numero`
 AND p.`Estatus` IN('original','abonado')
 AND c.`CapitalPendiente`>1
- AND e.numero6
+ AND e.numero=6
 GROUP BY p.`Numero`
 ORDER BY e.nombre, p.monto DESC
 ,b.`Nombre`
