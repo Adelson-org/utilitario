@@ -13,7 +13,7 @@ AND p.`Cliente`=b.`Numero`
 AND p.`Estatus` IN('original','abonado')
 AND c.`CapitalPendiente`>1
  AND c.`Vencimiento`<= NOW()
--- and e.numero=7
+-- and e.numero=6
 GROUP BY p.`Numero`
 ORDER BY e.nombre, p.monto DESC
 ,b.`Nombre`

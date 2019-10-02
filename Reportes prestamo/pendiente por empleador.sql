@@ -10,8 +10,8 @@ FROM prestamo p, cuota c, cliente b, empleador e
 WHERE p.`Numero`=c.`Prestamo` AND b.empleador=e.numero
 AND p.`Cliente`=b.`Numero`
 AND p.`Estatus` IN('original','abonado')
-AND c.`CapitalPendiente`>1
- AND e.numero=6
+AND c.`CapitalPendiente`>2
+ AND e.numero=1
 GROUP BY p.`Numero`
 ORDER BY e.nombre, p.monto DESC
 ,b.`Nombre`
