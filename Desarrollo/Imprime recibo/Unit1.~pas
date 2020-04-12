@@ -129,6 +129,7 @@ begin
     ' group by c.prestamo '+
     '','abrir');
 
+    
      en_atraso :='0';
      if adoquery2.recordcount>0 then//  .FieldByName('numero').Asinteger>0 then
      begin

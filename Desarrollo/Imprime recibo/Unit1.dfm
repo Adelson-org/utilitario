@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 124
   Width = 463
   Height = 640
-  Caption = 'Form1'
+  Caption = '9'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object Form1: TForm1
   object QuickRep1: TQuickRep
     Left = 76
     Top = 106
-    Width = 333
+    Width = 250
     Height = 427
     Frame.Color = clBlack
     Frame.DrawTop = False
@@ -85,7 +85,7 @@ object Form1: TForm1
     object QRBand1: TQRBand
       Left = 48
       Top = 0
-      Width = 275
+      Width = 192
       Height = 311
       Frame.Color = clBlack
       Frame.DrawTop = False
@@ -99,7 +99,7 @@ object Form1: TForm1
       ForceNewPage = False
       Size.Values = (
         822.854166666666700000
-        727.604166666666700000)
+        508.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbTitle
@@ -356,7 +356,7 @@ object Form1: TForm1
         Font.Name = 'Arial'
         Font.Style = []
         Lines.Strings = (
-          '849-636-4367')
+          '829-892-2597')
         ParentFont = False
         Transparent = False
         WordWrap = True
@@ -2001,7 +2001,7 @@ object Form1: TForm1
     object QRBand2: TQRBand
       Left = 48
       Top = 311
-      Width = 275
+      Width = 192
       Height = 90
       Frame.Color = clBlack
       Frame.DrawTop = False
@@ -2015,7 +2015,7 @@ object Form1: TForm1
       ForceNewPage = False
       Size.Values = (
         238.125000000000000000
-        727.604166666666700000)
+        508.000000000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbPageFooter
