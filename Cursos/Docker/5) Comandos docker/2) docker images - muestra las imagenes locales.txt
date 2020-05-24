@@ -1,0 +1,12 @@
+docker images : 
+--------------------------------------------
+esto muestra las imagenes que he descargado o que le he hecho pull con docker run o sea muestra las imagenes que he descargado en mi maquina local, en este caso ubuntu.
+
+REPOSITORY          	TAG                 	IMAGE ID            	CREATED           SIZE
+ubuntu              	latest              	1d622ef86b13        	3 weeks ago         73.9MB
+
+
+
+
+
+

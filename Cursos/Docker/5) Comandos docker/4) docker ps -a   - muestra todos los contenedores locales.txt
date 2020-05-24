@@ -1,0 +1,10 @@
+docker ps -a : 
+--------------------------------------------
+
+docker ps: muestra los contenedores que se estan ejecutando.
+docker ps -a: muestra todos los contenedores incluyendo los detenidos.
+
+$docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+023a80020904        ubuntu              "/bin/echo hola"    13 minutes ago      Exited (0) 13 minutes ago                       interesting_ardinghelli
+

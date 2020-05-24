@@ -1,0 +1,15 @@
+
+1) Crear repositorio en github -admin
+2) Crear branches(develop,cliente,prestamo,pago)
+3) Que todos los colaboradores creen su cuenta de github.-admin y colab.
+4) Agregar colaboradores al repositorio - admin 
+5) Crear proyecto,columnas y notas - usando modelo canban(scrum ) Planificar tareas - admin
+6) Asignar(abrir) o reasignar(reabrir) tarea a los colaboradores
+7) 
+
+) Ver estadistica
+8)
+
+
+
+

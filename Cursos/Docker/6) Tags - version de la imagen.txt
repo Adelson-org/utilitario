@@ -1,0 +1,13 @@
+son las versiones de la imagen, 
+
+latest : para la ultima imagen
+
+ej: en net core podemos ver:  net core 2.2 y asi.
+
+no es obligatorio segun un orden logico ni tiene que ser obligatoriamente numero,
+puede ser alfanumerico, como latest y asi.
+
+
+
+
+

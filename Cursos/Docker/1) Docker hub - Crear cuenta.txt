@@ -1,0 +1,8 @@
+https://hub.docker.com/
+
+Docker hub:
+
+es un repositorio público en la nube, similar a Github, para distribuir los contenidos. 
+Está mantenido por la propia Docker y hay multitud de imágenes, de carácter gratuito, 
+que se pueden descargar y asi no tener que hacer el trabajo desde cero 
+al poder aprovechar “plantillas”.

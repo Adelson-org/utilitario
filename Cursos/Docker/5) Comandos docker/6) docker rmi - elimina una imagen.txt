@@ -1,0 +1,11 @@
+docker rmi nombreimagen : 
+--------------------------------------------
+
+docker rmi ubuntu:
+
+elimana una imagen, si la imagen tiene un contenedor asociado, deberas primero eliminar estos contenedores asociado
+para ellos listar los contenedores con(docker ps -a), luego eliminarlos usando (docker rm container id)
+
+si hay dos imagnes descargadas con el mismo nombre pero con diferente version o tag, la forma de forzar la 
+eliminacion es con un -f al final asi: docker rmi ubuntu -f
+

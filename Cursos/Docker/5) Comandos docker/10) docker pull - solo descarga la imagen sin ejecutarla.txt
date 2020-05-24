@@ -1,0 +1,18 @@
+docker pull nombreimagen:tag 
+--------------------------------------------
+
+esto solo descarga la imagen en local desde docker hub, sin crear contenedor ni nada,
+
+docker pull microsoft/aspnetcore:v1    descarga la version 1
+
+docker pull microsoft/aspnetcore       descarga la version latest que es la ultima
+
+en el caso que la ultima imagen sea la  v1 entonces esta sera la latest, si esta es la ultima.
+
+no es una buena idea apuntar a tag latest, siempre apunte a la version que deseas descargar asi: imagen:v1
+
+recordar que las imagenes se encuentran en docker hub
+
+
+
+

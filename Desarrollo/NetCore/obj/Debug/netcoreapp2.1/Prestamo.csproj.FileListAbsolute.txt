@@ -1,0 +1,11 @@
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\Prestamo.deps.json
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\Prestamo.runtimeconfig.json
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\Prestamo.runtimeconfig.dev.json
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\Prestamo.dll
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Prestamo.csprojAssemblyReference.cache
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Prestamo.csproj.CoreCompileInputs.cache
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Prestamo.AssemblyInfoInputs.cache
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Prestamo.AssemblyInfo.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\Prestamo.pdb
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Prestamo.dll
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Prestamo.pdb

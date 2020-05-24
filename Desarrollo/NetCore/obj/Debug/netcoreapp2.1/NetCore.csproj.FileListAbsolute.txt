@@ -1,0 +1,119 @@
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\NetCore.deps.json
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\NetCore.runtimeconfig.json
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\NetCore.runtimeconfig.dev.json
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\NetCore.dll
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\NetCore.pdb
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\NetCore.Views.dll
+C:\Users\adelson sanchez\Downloads\Prestamo\bin\Debug\netcoreapp2.1\NetCore.Views.pdb
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.csproj.CoreCompileInputs.cache
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.RazorAssemblyInfo.cache
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.RazorAssemblyInfo.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.AssemblyInfoInputs.cache
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.AssemblyInfo.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.TagHelpers.input.cache
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.TagHelpers.output.cache
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.RazorCoreGenerate.cache
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.RazorTargetAssemblyInfo.cache
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.RazorTargetAssemblyInfo.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.Views.pdb
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.dll
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.pdb
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.csproj.CopyComplete
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Create.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Delete.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Details.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Edit.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Index.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\Prestamo\obj\Debug\netcoreapp2.1\NetCore.csprojAssemblyReference.cache
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\bin\Debug\netcoreapp2.1\NetCore.deps.json
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\bin\Debug\netcoreapp2.1\NetCore.runtimeconfig.json
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\bin\Debug\netcoreapp2.1\NetCore.runtimeconfig.dev.json
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\bin\Debug\netcoreapp2.1\NetCore.dll
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\bin\Debug\netcoreapp2.1\NetCore.pdb
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\bin\Debug\netcoreapp2.1\NetCore.Views.dll
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\bin\Debug\netcoreapp2.1\NetCore.Views.pdb
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.csprojAssemblyReference.cache
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.csproj.CoreCompileInputs.cache
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.RazorAssemblyInfo.cache
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.RazorAssemblyInfo.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.AssemblyInfoInputs.cache
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.AssemblyInfo.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.TagHelpers.input.cache
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.TagHelpers.output.cache
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.RazorCoreGenerate.cache
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Create.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Delete.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Details.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Edit.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Index.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.RazorTargetAssemblyInfo.cache
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.RazorTargetAssemblyInfo.cs
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.Views.pdb
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.dll
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.pdb
+C:\Users\adelson sanchez\Downloads\NetCore\NetCore\obj\Debug\netcoreapp2.1\NetCore.csproj.CopyComplete
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\appsettings.json
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\NetCore.deps.json
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\NetCore.runtimeconfig.json
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\NetCore.runtimeconfig.dev.json
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\NetCore.dll
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\NetCore.pdb
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\NetCore.Views.dll
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\NetCore.Views.pdb
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.csprojAssemblyReference.cache
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.RazorAssemblyInfo.cache
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.RazorAssemblyInfo.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.AssemblyInfoInputs.cache
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.AssemblyInfo.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.TagHelpers.input.cache
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.TagHelpers.output.cache
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.RazorCoreGenerate.cache
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Create.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Delete.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Details.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Edit.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Index.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.RazorTargetAssemblyInfo.cache
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.RazorTargetAssemblyInfo.cs
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.Views.pdb
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.dll
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.pdb
+G:\utilitario\Desarrollo\NetCore\obj\Debug\netcoreapp2.1\NetCore.csproj.CopyComplete
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\output\web.config
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\output\appsettings.json
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\output\NetCore.deps.json
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\output\NetCore.runtimeconfig.json
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\output\wwwroot\lib\bootstrap\.bower.json
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\output\wwwroot\lib\jquery-validation-unobtrusive\.bower.json
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\output\wwwroot\lib\jquery-validation\.bower.json
+G:\utilitario\Desarrollo\NetCore\bin\Debug\netcoreapp2.1\output\wwwroot\lib\jquery\.bower.json

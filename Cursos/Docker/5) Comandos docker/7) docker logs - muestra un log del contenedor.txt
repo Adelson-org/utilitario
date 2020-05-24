@@ -1,0 +1,16 @@
+docker logs container id : 
+--------------------------------------------
+
+docker logs 8aaa936f2f84: muestra los logs del contenedor de ubuntu. es decir lo que se ha ejecutado.
+
+ejemplo:
+
+docker logs 86a890cb1713
+* Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+127.17.0.1 - - [08/sep/2016 16:56:49] "GET / HTTP/1.1" 200
+
+este log indica que se ha ejecutado una solicitud GET exitosamente(200) 
+
+para mostrar una descripcion del container usar docker inspect 86a890cb1713
+
+

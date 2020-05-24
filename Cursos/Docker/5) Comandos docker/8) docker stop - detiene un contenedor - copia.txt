@@ -1,0 +1,9 @@
+docker stop container id : 
+--------------------------------------------
+
+docker stop 8aaa936f2f84: detiene el contenedor.
+
+deberá cambiar de status =up a exited
+
+puedes ver el status mostrando el contenedor con docker ps -a
+

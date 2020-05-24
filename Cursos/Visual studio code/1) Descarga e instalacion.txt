@@ -1,0 +1,14 @@
+descarga :
+--------------------
+ir al navegador y escribir  https://code.visualstudio.com/download#
+
+
+instalacion:
+----------------------
+1) ir a la carpeta descarga o download
+2) ejecutar VSCode.... 
+3) aceptar acuerdo, siguiente, llenar todo y finalizar
+
+video de ayuda:
+https://www.youtube.com/watch?v=HVzFLw5r2EM
+

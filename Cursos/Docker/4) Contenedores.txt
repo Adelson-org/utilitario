@@ -1,0 +1,20 @@
+Un contenedor es un directorio
+
+se crea a partir de una imagen, ver  3) Imagenes.
+
+actuan como maquina virtuales se pueden:ejecutar,pausar etc.
+
+seria como la parte funcionar de una imagen.
+
+este contenedor contendra un sistema y sus dependencia, ya que será portable y podra
+ser ejecutado desde cualquier sistema operativo que tenga docker instalado.
+
+ejemplo:
+
+contenedor1: (php,mysql,ubuntu). este es un contenedor para tener php y una base de datos mysql corriendo en ubuntu, si lo queremos correr en windows, solo debemos tener docker instalado.
+
+
+
+
+
+

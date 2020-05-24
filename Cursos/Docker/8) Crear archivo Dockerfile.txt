@@ -1,0 +1,14 @@
+#este archivo debe llamarse Dockerfile y debe ser creado sin extension, eligiendo la opcion todos los archivos
+#al guardar como con un block de notas, en nuestro caso G:\utilitario\Desarrollo\NetCore
+
+#indicamos que use la imagen de plantilla, la que esta en docker hub.  y la version la version
+#from imagenhub:version
+FROM microsoft/aspnetcore:2.0
+
+#copiamos la carpeta output de nuestro proyecto .net core, como el archivo esta en el directorio
+#de la aplicacion no hay que indicar la ruta completa, solo la carpeta del output, donde publicamos la aplicacion
+COPY /output .
+
+#con esto le decimos al contenedor lo que queremos que haga
+#ENTRYPOINT ["comando de netcore a ejecutar","aplicacionNetCore.dll"]
+ENTRYPOINT ["dotnet","NetCore.dll"]

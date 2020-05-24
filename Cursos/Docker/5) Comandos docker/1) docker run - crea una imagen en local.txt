@@ -1,0 +1,30 @@
+docker run ubuntu /bin/echo "hello wuold"  
+
+docker run nombredeimagen : 
+--------------------------------------------
+esto va a docker hub y hace un pull, es decir descarga la imagen
+de ubuntu, mysql o sea crea una instancia de la imagen en forma de directorio.
+
+docker run -d nombredeimagen : ejecuta en segundo plano, modo silencioso
+
+/bin/echo "hello wuold" :
+-------------------------------
+/bin/comando ejecuta comando de ubuntu.
+
+lo que hace run, es descargar una instancia de la imagen ubuntu, es decir lo descarga a 
+directorio y la proxima vez que ejecutemos el comando ya no se descarga sino que ejecuta el
+comando y ya, como si estuvieramos en una maquina con ubuntu.
+
+
+docker run -d -p 81:5000 tradding/webapp python app.py : 
+--------------------------------------------
+
+docker run -d: ejecuta la imagen en modo silencioso.
+-p 81:5000 : especifica el puerto local(80 o 81) y el puerto de la imagen(5000) 
+tradding/webapp: imagen de una pagina en python
+python app.py: pagina de python que sera ejecutada, se requiere python y la pagina app.py
+
+
+
+
+

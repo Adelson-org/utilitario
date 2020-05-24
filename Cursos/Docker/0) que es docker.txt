@@ -1,0 +1,19 @@
+Docker es open source(de código libre)
+
+es un programa que se usa para crear contenedores.
+
+este contenedor contendra un sistema y sus dependencia, ya que será portable y podra
+ser ejecutado desde cualquier sistema operativo que tenga docker instalado.
+
+es como una maquina virtual, pero mas liviana y mas rapido.
+mientras que a una máquina virtual necesitas instalarle un sistema operativo para funcionar, un contenedor de Docker funciona utilizando el sistema operativo que tiene la máquina en la que se ejecuta el contenedor.
+
+ejemplo:
+
+contenedor1: (php,mysql,ubuntu). este es un contenedor para tener php y una base de datos mysql corriendo en ubuntu, si lo queremos correr en windows, solo debemos tener docker instalado.
+
+
+
+
+
+

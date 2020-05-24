@@ -1,0 +1,26 @@
+
+#indicamos que use esta imagen de plantilla, la que esta en docker hub.
+# y la version la copiamos de powershell  dotnet --version
+#from imagenhub:version
+FROM microsoft/aspnetcore:3.0.100-preview8-013656
+
+#copiamos la carpeta output de nuestro proyecto .net core
+COPY /output .
+
+#con esto le decimos al contenedor lo que queremos que haga
+#ENTRYPOINT ["comando de netcore para ejecutar comando por consola","aplicacionCore.dll"]
+ENTRYPOINT ["dotnet","NetCore.dll"]
+
+# set up network
+ENV ASPNETCORE_URLS http://+:80
+
+# set up the runtime store
+ENV ASPNETCORE_RUNTIME_STORE_VERSION 2.0.0-preview1
+RUN curl -o /tmp/runtimestore.tar.gz \
+    https://dist.asp.net/packagecache/${ASPNETCORE_RUNTIME_STORE_VERSION}/linux-x64/aspnetcore.runtimestore.tar.gz \
+    && export DOTNET_HOME=$(dirname $(readlink $(which dotnet))) \
+    && tar -x -C $DOTNET_HOME -f /tmp/runtimestore.tar.gz \
+    && rm /tmp/runtimestore.tar.gz
+
+#usar la imagen de plantilla que está en la pagina docker hub    
+   from microsoft/aspnetcore:

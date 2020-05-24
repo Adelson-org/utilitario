@@ -1,0 +1,9 @@
+son las plataformas y framework que usaremos con vscode :
+--------------------
+
+si vamos a trabajar con .net core, deberemos instalar las extensiones necesarias, estas se encuentran en la pagina de 
+escribir  instalar .net core en vscode
+
+video de ayuda:
+https://www.youtube.com/watch?v=HVzFLw5r2EM
+

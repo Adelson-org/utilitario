@@ -1,0 +1,11 @@
+este proyecto nos permitira administrar lo que cada colaborador va, esta y ha hecho.
+
+1) ir al usuario en la parte superior derecha de arriba
+2) click derecho y click en your project
+3) new project
+4) ponerle un nombre, puede ser el mismo del repositorio git-y-github en este caso
+5) llenar lo demas campos
+6) create project
+
+fin
+

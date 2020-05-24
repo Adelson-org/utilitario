@@ -1,0 +1,9 @@
+docker rm CONTAINER ID container2 container 3 etc.: 
+--------------------------------------------
+
+docker rm 023a80020904 :
+
+elimana un contenedor.
+
+para listar los contenedores  ejecutar docker ps -a
+

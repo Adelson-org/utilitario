@@ -1,0 +1,17 @@
+son las tareas que debe hacer el colaborador, en este caso el admin, debera ir haciendolas en 
+la columna (Por hacer), aqui debera listar todas las tareas. estas deben ser dividida de tal
+manera que el colaborador la pueda hacer en un dia, ejemplo: si va hacer una vista para crear
+cliente, crear una tarea para la maqueta, otra para el contenido, otra para los estilo, etc.
+
+1) ir al usuario en la parte superior derecha de arriba
+2) click derecho y click en your project
+3) click en el proyecto
+4) darle al signo de mas que se encuentra en la column por hacer
+5) escribir la tarea por hacer.
+6) add
+7) click en los ... de la nota Y convert to issue
+8) elegir repositorio y en body ponerle lo que desea que haga el colaborador
+9) Convert to issue
+
+fin
+
