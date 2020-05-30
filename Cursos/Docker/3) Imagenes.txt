@@ -1,5 +1,0 @@
-Son plantilla de solo lectura que se componen de un sistema de fichero y parametros basado en linux. muchas imagenes se encuentran en docker hub, estas plantillas, no se ejecutan sino que almacena las informaciones del sistema operativo, mas las modificaciones que le hayamos hecho y eso se queda ahi guardado y a partir de esa imagen es que nosotros vamos a
-instanciar contenedores.
-
-es decir que un contenedor se crea a partir de una imagen.
-
